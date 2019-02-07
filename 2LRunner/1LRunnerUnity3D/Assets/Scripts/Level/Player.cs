@@ -72,11 +72,11 @@ public class Player : MonoBehaviour
             speed -= 15;
         }
 
-        float currentX = this.transform.position.x;
-        // float currentY = this.transform.position.y;
-        float currentZ = this.transform.position.z;
+        // float currentX = this.transform.position.x;
+        // float currentZ = this.transform.position.z;
+        float currentY = this.transform.position.y;
 
-        if ((currentX > 11) || (currentX < -11) || (currentZ < -74) || (currentZ > 72))
+        if (currentY < -1)
         {
             this.transform.position = this.playerStartPosition;
         }

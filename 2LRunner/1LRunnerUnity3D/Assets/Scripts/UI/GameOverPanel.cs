@@ -13,8 +13,12 @@ public class GameOverPanel : MonoBehaviour
     [SerializeField]
     private Button restartBtn, quitBtn;
 
+    [SerializeField]
+    private Animator anim;
+
     public void Init(float currentScore, float bestScore){
-        root.gameObject.SetActive(true);
+        anim.SetTrigger("GameOver");
+        // root.gameObject.SetActive(true);
         currentScoreText.text = "Your score: " + currentScore;
         bestScoreText.text = "Best score: " + bestScore;
     }
@@ -24,7 +28,7 @@ public class GameOverPanel : MonoBehaviour
     {
         restartBtn.onClick.AddListener(Restart);
         quitBtn.onClick.AddListener(Quit);
-        root.gameObject.SetActive(false);
+        // root.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
